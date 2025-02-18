@@ -240,7 +240,7 @@ iframe.visible {
     }
 
     .main-nav ul li a:hover {
-        color: #005F99; /* آبی تیره */
+        color: #FFA500; /* تغییر رنگ پس‌زمینه */
     }
 
     /* پس‌زمینه تاری */
@@ -340,7 +340,7 @@ iframe.visible {
 
 #tracking button {
     display: inline-block;
-    background: #005F99; /* آبی تیره */
+    background: #2F5A2A; /* سبز تیره */
     color: #fff;
     padding: 10px 20px;
     border: none;
