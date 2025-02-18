@@ -3,14 +3,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #FFFFFF; /* سفید */
     color: #333;
     text-align: center;
 }
 
 header {
-    background: #FFA500; /* نارنجی */
-    color: #000; /* مشکی */
+    background: #FFFFFF; /* سفید */
+    color: #005F99; /* آبی تیره */
     padding: 40px 20px;
     position: relative;
 }
@@ -18,11 +18,13 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    color: #005F99; /* آبی تیره */
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 1.2em;
+    color: #005F99; /* آبی تیره */
 }
 
 .logo {
@@ -53,15 +55,15 @@ header p {
 }
 
 .main-nav ul li a {
-    color: #fff; /* سفید */
+    color: #005F99; /* آبی تیره */
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    color: #FFD700; /* زرد */
-    font-size: 1.2em; /* بزرگ‌تر شدن متن هنگام هاور */
+    color: #005F99; /* آبی تیره */
+    font-size: 1.2em;
     text-decoration: underline;
 }
 
@@ -93,9 +95,14 @@ section.visible {
 }
 
 h2 {
-    color: #FFA500; /* نارنجی */
+    color: #005F99; /* آبی تیره */
     border-bottom: 2px solid #FFA500;
     padding-bottom: 10px;
+}
+
+h3 {
+    color: #005F99; /* آبی تیره */
+    margin-top: 20px;
 }
 
 ul {
@@ -109,7 +116,7 @@ ul li {
 }
 
 a {
-    color: #FFA500; /* نارنجی */
+    color: #005F99; /* آبی تیره */
     text-decoration: none;
 }
 
@@ -119,8 +126,8 @@ a:hover {
 
 .button {
     display: inline-block;
-    background: #FFD700; /* زرد */
-    color: #000; /* مشکی */
+    background: #005F99; /* آبی تیره */
+    color: #D1D5DB; /* خاکستری کمرنگ */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -130,13 +137,30 @@ a:hover {
 }
 
 .button:hover {
+    transform: scale(1.05);
+    background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
+}
+
+.phone-button {
+    display: inline-block;
+    background: #005F99; /* آبی تیره */
+    color: #D1D5DB; /* خاکستری کمرنگ */
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.phone-button:hover {
     transform: scale(1.05); /* بزرگ‌تر شدن دکمه */
     background-color: #FFA500; /* تغییر رنگ پس‌زمینه */
 }
 
 footer {
-    background: #4CAF50; /* سبز */
-    color: #fff;
+    background: #005F99; /* آبی تیره */
+    color: #D1D5DB; /* خاکستری کمرنگ */
     padding: 20px;
     margin-top: 20px;
     transform: translateY(100%);
@@ -150,6 +174,17 @@ footer.visible {
 footer p {
     margin: 5px 0;
     font-size: 1em;
+}
+
+.social-icon {
+    width: 85px; /* اندازه آیکون */
+    height: auto;
+    margin: 0 10px; /* فاصله بین آیکون‌ها */
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* بزرگ‌تر شدن آیکون هنگام هاور */
 }
 
 iframe {
@@ -180,7 +215,7 @@ iframe.visible {
         right: -100%;
         width: 80%;
         height: 100%;
-        background: #FFD700; /* زرد */
+        background: #D1D5DB; /* خاکستری کمرنگ */
         z-index: 1000;
         transition: right 0.3s ease;
     }
@@ -205,7 +240,7 @@ iframe.visible {
     }
 
     .main-nav ul li a:hover {
-        color: #FFA500; /* نارنجی */
+        color: #005F99; /* آبی تیره */
     }
 
     /* پس‌زمینه تاری */
@@ -223,4 +258,106 @@ iframe.visible {
     .overlay.active {
         display: block;
     }
+}
+
+/* استایل اسلایدر */
+.slider {
+    position: relative;
+    max-width: 100%; /* به جای ۸۰۰ پیکسل، ۱۰۰٪ از عرض صفحه */
+    height: auto;
+    aspect-ratio: 8 / 3; /* نسبت تصویری مناسب برای نمایش */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* دکمه‌های کنترل اسلایدر */
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    bottom: 10px; /* تغییر از top: 50% به bottom برای نمایش بهتر */
+    left: 0;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    pointer-events: none;
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 5px;
+    pointer-events: all;
+}
+
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#tracking {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#tracking input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+#tracking button {
+    display: inline-block;
+    background: #005F99; /* آبی تیره */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#tracking button:hover {
+    background: #FF8C00; /* رنگ کمی تیره‌تر هنگام هاور */
+    transform: scale(1.05);
+}
+
+#repairStatus {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
 }
