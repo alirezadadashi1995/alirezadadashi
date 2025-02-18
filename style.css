@@ -10,7 +10,7 @@ body {
 
 header {
     background: #FFFFFF; /* سفید */
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
     padding: 40px 20px;
     position: relative;
 }
@@ -18,13 +18,13 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 1.2em;
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
 }
 
 .logo {
@@ -55,14 +55,14 @@ header p {
 }
 
 .main-nav ul li a {
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
     font-size: 1.2em;
     text-decoration: underline;
 }
@@ -95,13 +95,13 @@ section.visible {
 }
 
 h2 {
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
     border-bottom: 2px solid #FFA500;
     padding-bottom: 10px;
 }
 
 h3 {
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
     margin-top: 20px;
 }
 
@@ -116,7 +116,7 @@ ul li {
 }
 
 a {
-    color: #005F99; /* آبی تیره */
+    color: #2F5A2A; /* سبز تیره */
     text-decoration: none;
 }
 
@@ -126,8 +126,8 @@ a:hover {
 
 .button {
     display: inline-block;
-    background: #005F99; /* آبی تیره */
-    color: #D1D5DB; /* خاکستری کمرنگ */
+    background: #2F5A2A; /* سبز تیره *//
+    color: #FFFFFF; /* سفید */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -143,8 +143,8 @@ a:hover {
 
 .phone-button {
     display: inline-block;
-    background: #005F99; /* آبی تیره */
-    color: #D1D5DB; /* خاکستری کمرنگ */
+    background: #2F5A2A; /* سبز تیره */
+    color: #FFFFFF; /* سفید */
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -159,8 +159,8 @@ a:hover {
 }
 
 footer {
-    background: #005F99; /* آبی تیره */
-    color: #D1D5DB; /* خاکستری کمرنگ */
+    background: #2F5A2A; /* سبز تیره */
+    color: #FFFFFF; /* سفید */
     padding: 20px;
     margin-top: 20px;
     transform: translateY(100%);
@@ -215,7 +215,7 @@ iframe.visible {
         right: -100%;
         width: 80%;
         height: 100%;
-        background: #D1D5DB; /* خاکستری کمرنگ */
+        background: #FFFFFF; /* سفید */
         z-index: 1000;
         transition: right 0.3s ease;
     }
