@@ -38,6 +38,7 @@ header p {
     transform: rotate(360deg); /* چرخش ۳۶۰ درجه */
 }
 
+.main-nav {
     margin-top: 0; /* حذف فاصله بالا */
     background: #FFFFFF; /* سفید */
     position: fixed; /* ثابت کردن موقعیت */
@@ -45,6 +46,7 @@ header p {
     left: 0; /* قرار دادن در سمت چپ صفحه */
     width: 100%; /* عرض کامل صفحه */
     z-index: 1000; /* قرار دادن بالاتر از سایر عناصر */
+}
 
 .main-nav ul {
     list-style-type: none;
