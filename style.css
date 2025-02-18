@@ -3,13 +3,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #CBD6CA; /* سبز روشن */
+    background-color: ##E5EBE5; /* سبز روشن */
     color: #333;
     text-align: center;
 }
 
 header {
-    background: #FFFFFF; /* سفید */
+    background: ##E5EBE5; /* سبز روشن */
     color: #2F5A2A; /* سبز تیره */
     padding: 40px 20px;
     position: relative;
