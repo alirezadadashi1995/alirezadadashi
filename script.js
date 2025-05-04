@@ -1,53 +1,84 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-const totalSlides = slides.length;
-const prevButton = document.getElementById("prevSlide");
-const nextButton = document.getElementById("nextSlide");
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
 
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
-}
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
+  }
+
+  // شروع نمایش اولیه
+  showSlide(currentSlide);
+
+  // تعویض خودکار هر 5 ثانیه
+  setInterval(nextSlide, 5000);
+</script>
+
+// انتخاب عناصر مورد نیاز
+const hamburger = document.querySelector('.menu-icon');
+const navMenu = document.querySelector('.main-nav');
+const overlay = document.querySelector('.overlay');
+
+// تابع باز و بسته کردن منو
+function toggleMenu() {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+  overlay.classList.toggle('active');
 }
 
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    showSlide(currentSlide);
-}
-
-nextButton.addEventListener("click", nextSlide);
-prevButton.addEventListener("click", prevSlide);
-
-// نمایش خودکار هر ۳ ثانیه
-setInterval(nextSlide, 3000);
-
-// نمایش اسلاید اول در ابتدا
-showSlide(currentSlide);
-let startX = 0;
-let endX = 0;
-
-document.querySelector(".slider").addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
+// بستن منو هنگام کلیک روی هر لینک منو
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
 });
 
-document.querySelector(".slider").addEventListener("touchend", (e) => {
-    endX = e.changedTouches[0].clientX;
-    if (startX > endX + 50) {
-        nextSlide(); // سوایپ به چپ (نمایش اسلاید بعدی)
-    } else if (startX < endX - 50) {
-        prevSlide(); // سوایپ به راست (نمایش اسلاید قبلی)
-    }
-});
+// بستن منو با کلیک روی Overlay
+overlay.addEventListener('click', toggleMenu);
 
-document.getElementById("trackingCode").addEventListener("keypress", function(e) {
+// باز و بسته کردن با کلیک روی آیکن منو (در فایل HTML هم روی آیکن `onclick="toggleMenu()"` هست)
+
+// بستن منو با کلید Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+
+
+
+  document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         checkRepairStatus(); // جستجو به محض فشردن اینتر
     }
 });
+
+// تابع کپی اطلاعات بانکی
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        // نمایش پیام موفقیت
+        const originalText = element.innerText;
+        element.innerText = "کپی شد!";
+        
+        // بازگشت به متن اصلی پس از 2 ثانیه
+        setTimeout(() => {
+            element.innerText = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('خطا در کپی کردن: ', err);
+    });
+}
 
 function checkRepairStatus() {
     var trackingCode = document.getElementById("trackingCode").value.trim();
@@ -118,3 +149,13 @@ function checkRepairStatus() {
         document.getElementById("repairCost").innerHTML = "";
     });
 }
+
+// نمایش آیکون پس از اسکرول کاربر
+window.addEventListener('scroll', function() {
+    const whatsappSupport = document.querySelector('.whatsapp-support');
+    if (window.scrollY > 300) {
+        whatsappSupport.style.display = 'block';
+    } else {
+        whatsappSupport.style.display = 'none';
+    }
+});
