@@ -1,3 +1,57 @@
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // شروع نمایش اولیه
+  showSlide(currentSlide);
+
+  // تعویض خودکار هر 5 ثانیه
+  setInterval(nextSlide, 5000);
+</script>
+
+// انتخاب عناصر مورد نیاز
+const hamburger = document.querySelector('.menu-icon');
+const navMenu = document.querySelector('.main-nav');
+const overlay = document.querySelector('.overlay');
+
+// تابع باز و بسته کردن منو
+function toggleMenu() {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+  overlay.classList.toggle('active');
+}
+
+// بستن منو هنگام کلیک روی هر لینک منو
+document.querySelectorAll('.main-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+});
+
+// بستن منو با کلیک روی Overlay
+overlay.addEventListener('click', toggleMenu);
+
+// باز و بسته کردن با کلیک روی آیکن منو (در فایل HTML هم روی آیکن `onclick="toggleMenu()"` هست)
+
+// بستن منو با کلید Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  }
 
 
 
