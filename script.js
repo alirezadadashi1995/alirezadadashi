@@ -40,11 +40,6 @@ document.querySelectorAll('.main-nav a').forEach(link => {
   });
 });
 
-// بستن منو با کلیک روی Overlay
-overlay.addEventListener('click', toggleMenu);
-
-// باز و بسته کردن با کلیک روی آیکن منو (در فایل HTML هم روی آیکن `onclick="toggleMenu()"` هست)
-
 
   document.getElementById("trackingCode").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
