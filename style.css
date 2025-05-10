@@ -754,60 +754,6 @@ iframe.visible {
 }
 
 
-
-/* استایل اصلی آیکون پشتیبانی */
-.whatsapp-support {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* تغییر از left به right برای سمت راست */
-    z-index: 9999;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-support a {
-    display: flex;
-    align-items: center;
-    background: #25D366;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.whatsapp-support a:hover {
-    background: #128C7E;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 10px; /* فاصله بین آیکون و متن */
-}
-
-.support-text {
-    font-weight: bold;
-    font-size: 1em;
-}
-
-/* انیمیشن پالس برای جلب توجه */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-
 /* استایل‌های موبایل */
 @media (max-width: 768px) {
     .menu-icon {
@@ -899,33 +845,147 @@ iframe.visible {
         margin: 15px auto;
     }
 }
-/* حالت موبایل */
-@media (max-width: 768px) {
-    .whatsapp-support {
-        bottom: 15px;
-        right: 15px;
-        width: auto; /* عرض خودکار */
-    }
-    
-    .whatsapp-support a {
-        padding: 8px 12px;
-        width: auto; /* جلوگیری از کشیده شدن */
-    }
-    
-    .whatsapp-icon {
-        width: 35px;
-        height: 35px;
-        margin-left: 0; /* حذف margin اضافه */
-    }
-    
-    .support-text {
-        font-size: 0.8em;
-        display: inline; /* نمایش متن در صورت فضای کافی */
-    }
-}
+
 /* فقط در صفحه‌های کوچک (موبایل) نمایش داده شود */
 @media (max-width: 768px) {
   .close-btn {
     display: block;
+  }
+}
+
+
+
+/* استایل پایه برای همه دکمه‌های شناور */
+.whatsapp-support,
+.repair-float-button,
+.order-float-button,
+.track-repair-float-button,
+.track-order-float-button,
+.contact-float-button {
+  position: fixed;
+  z-index: 9999;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-support a,
+.repair-float-button a,
+.order-float-button a,
+.track-repair-float-button a,
+.track-order-float-button a,
+.contact-float-button a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.whatsapp-support a:hover,
+.repair-float-button a:hover,
+.order-float-button a:hover,
+.track-repair-float-button a:hover,
+.track-order-float-button a:hover,
+.contact-float-button a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-support i,
+.repair-float-button i,
+.order-float-button i,
+.track-repair-float-button i,
+.track-order-float-button i,
+.contact-float-button i {
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+
+/* موقعیت‌یابی هر دکمه */
+.whatsapp-support {
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+}
+
+.repair-float-button {
+  bottom: 90px;
+  left: 20px;
+  background: #FF416C;
+}
+
+.order-float-button {
+  bottom: 90px;
+  right: 20px;
+  background: #4CAF50;
+}
+
+.track-repair-float-button {
+  top: 20px;
+  left: 20px;
+  background: #2196F3;
+}
+
+.track-order-float-button {
+  top: 20px;
+  right: 20px;
+  background: #9C27B0;
+}
+
+.contact-float-button {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #607D8B;
+}
+
+/* انیمیشن پالس */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+  .whatsapp-support,
+  .repair-float-button,
+  .order-float-button {
+    bottom: 10px;
+  }
+  
+  .repair-float-button {
+    bottom: 70px;
+    left: 10px;
+  }
+  
+  .order-float-button {
+    bottom: 70px;
+    right: 10px;
+  }
+  
+  .track-repair-float-button,
+  .track-order-float-button,
+  .contact-float-button {
+    top: 10px;
+  }
+  
+  .contact-float-button {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .whatsapp-support a,
+  .repair-float-button a,
+  .order-float-button a,
+  .track-repair-float-button a,
+  .track-order-float-button a,
+  .contact-float-button a {
+    padding: 10px 15px;
+    font-size: 0.8em;
   }
 }
